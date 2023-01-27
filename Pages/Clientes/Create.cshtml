@@ -1,0 +1,43 @@
+﻿@page
+@model JABIL_Project.Pages.Clientes.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Customers</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Customers.Customer" class="control-label"></label>
+                <input asp-for="Customers.Customer" class="form-control" />
+                <span asp-validation-for="Customers.Customer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customers.Prefix" class="control-label"></label>
+                <input asp-for="Customers.Prefix" class="form-control" />
+                <span asp-validation-for="Customers.Prefix" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customers.FKBuilding" class="control-label"></label>
+                <select asp-for="Customers.FKBuilding" class ="form-control" asp-items="ViewBag.FKBuilding"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

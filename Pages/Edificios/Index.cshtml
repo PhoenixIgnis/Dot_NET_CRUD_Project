@@ -1,0 +1,36 @@
+﻿@page
+@model JABIL_Project.Pages.Edificios.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Buildings[0].Building)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Buildings) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Building)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.PKBuilding">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.PKBuilding">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.PKBuilding">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

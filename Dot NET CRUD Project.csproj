@@ -18,9 +18,6 @@
 
   <ItemGroup>
     <Folder Include="Migrations\" />
-    <Folder Include="Pages\Buildings\" />
-    <Folder Include="Pages\Customers\" />
-    <Folder Include="Pages\PartNumbers\" />
   </ItemGroup>
 
 </Project>
