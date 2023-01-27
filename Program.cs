@@ -1,4 +1,4 @@
-using JABIL_Project.Models;
+using Dot_NET_CRUD_Project.Models;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace JABIL_Project.Models
+namespace Dot_NET_CRUD_Project.Models
 {
     public class DatabaseContext : DbContext
     {

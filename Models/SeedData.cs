@@ -1,10 +1,10 @@
-﻿using JABIL_Project.Models;
+﻿using Dot_NET_CRUD_Project.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Linq;
 
-namespace JABIL_Project.Models;
+namespace Dot_NET_CRUD_Project.Models;
 
 public static class SeedData
 {

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace JABIL_Project.Models
+namespace Dot_NET_CRUD_Project.Models
 {
     public class Buildings
     {
