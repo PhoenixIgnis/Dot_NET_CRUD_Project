@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33318.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JABIL Project", "JABIL Project.csproj", "{18FD2A03-D0AE-4BFF-B12C-33D0DCB1B5FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{18FD2A03-D0AE-4BFF-B12C-33D0DCB1B5FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18FD2A03-D0AE-4BFF-B12C-33D0DCB1B5FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18FD2A03-D0AE-4BFF-B12C-33D0DCB1B5FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18FD2A03-D0AE-4BFF-B12C-33D0DCB1B5FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {246A9966-CA53-42BA-94FC-60DC93237725}
+	EndGlobalSection
+EndGlobal
