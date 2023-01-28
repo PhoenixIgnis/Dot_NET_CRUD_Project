@@ -11,49 +11,60 @@
     <a asp-page="Create">Create New</a>
 </p>
 
-<form method="get">
-    <label for="filter">Available:</label>
-    <select id="filter" name="filter">
-        <option value="all">All</option>
-        <option value="true">Available</option>
-        <option value="false">Unavailable</option>
+
+<form method="get" asp-for="filter">
+    <label for="filter">Availability: </label>
+    <select name="filter">
+        @switch (ViewData["filter"])
+       {
+           default:
+                <option selected value="all">All</option>
+                <option value="true">Available</option>
+                <option value="false">Unavailable</option>
+           break;
+           
+           case "true":
+                <option value="all">All</option>
+                <option selected value="true">Available</option>
+                <option value="false">Unavailable</option>
+           break;
+           
+           case "false":
+                <option value="all">All</option>
+                <option value="true">Available</option>
+                <option selected value="false">Unavailable</option>
+           break;
+        }
+
     </select>
-    <input type="submit" value="filter" />
+    <input type="submit"  value="filter" />
 </form>
 
-<table class="table">
-    <thead>
+<br>
+
+<div id="Grid">
+    <table cellpadding="5" cellspacing="0" style="border: 1px solid #ccc;">
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.PartNumbers[0].PartNumber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PartNumbers[0].Available)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PartNumbers[0].Customer)
-            </th>
-            <th></th>
+            <th style="background-color: #B8DBFD;border: 1px solid #ccc"> Part Number</th>
+            <th style="background-color: #B8DBFD;border: 1px solid #ccc"> Availability</th>
+            <th style="background-color: #B8DBFD;border: 1px solid #ccc"> Customer</th>
+            <th style="background-color: #B8DBFD;border: 1px solid #ccc"> Building</th>
+            <th style="background-color: #B8DBFD;border: 1px solid #ccc"> Options</th>
         </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.PartNumbers) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.PartNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Available)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Customer.Customer)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.PKPartNumber">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.PKPartNumber">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.PKPartNumber">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+        @foreach (var item in Model.PartNumbers)
+        {
+            <tr>
+                <td style="border: 1px solid #ccc">@Html.DisplayFor(modelItem => item.PartNumber)</td>
+                <td style="border: 1px solid #ccc">@Html.DisplayFor(modelItem => item.Available)</td>
+                <td style="border: 1px solid #ccc">@Html.DisplayFor(modelItem => item.Customer.Customer)</td>
+                <td style="border: 1px solid #ccc">@Html.DisplayFor(modelItem => item.Customer.Building.Building)</td>
+                
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.PKPartNumber">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.PKPartNumber">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.PKPartNumber">Delete</a>
+                </td>
+            </tr>
+        }
+    </table>
+ </div>
