@@ -10,7 +10,7 @@ namespace Dot_NET_CRUD_Project.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=JABILProjectDB");
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=CSharpCRUDProjectDB");
 
         }
 

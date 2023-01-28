@@ -5,7 +5,7 @@
 namespace JABILProject.Migrations
 {
     /// <inheritdoc />
-    public partial class CreateJABILProjectDB : Migration
+    public partial class DBInitialize : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

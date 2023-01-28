@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JABILProject.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20230127190324_CreateJABILProjectDB")]
-    partial class CreateJABILProjectDB
+    [Migration("20230128163116_DBInitialize")]
+    partial class DBInitialize
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,7 +24,7 @@ namespace JABILProject.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("JABIL_Project.Models.Buildings", b =>
+            modelBuilder.Entity("Dot_NET_CRUD_Project.Models.Buildings", b =>
                 {
                     b.Property<int>("PKBuilding")
                         .ValueGeneratedOnAdd()
@@ -41,7 +41,7 @@ namespace JABILProject.Migrations
                     b.ToTable("Buildings");
                 });
 
-            modelBuilder.Entity("JABIL_Project.Models.Customers", b =>
+            modelBuilder.Entity("Dot_NET_CRUD_Project.Models.Customers", b =>
                 {
                     b.Property<int>("PKCustomers")
                         .ValueGeneratedOnAdd()
@@ -68,7 +68,7 @@ namespace JABILProject.Migrations
                     b.ToTable("Customers");
                 });
 
-            modelBuilder.Entity("JABIL_Project.Models.PartNumbers", b =>
+            modelBuilder.Entity("Dot_NET_CRUD_Project.Models.PartNumbers", b =>
                 {
                     b.Property<int>("PKPartNumber")
                         .ValueGeneratedOnAdd()
@@ -94,9 +94,9 @@ namespace JABILProject.Migrations
                     b.ToTable("PartNumbers");
                 });
 
-            modelBuilder.Entity("JABIL_Project.Models.Customers", b =>
+            modelBuilder.Entity("Dot_NET_CRUD_Project.Models.Customers", b =>
                 {
-                    b.HasOne("JABIL_Project.Models.Buildings", "Building")
+                    b.HasOne("Dot_NET_CRUD_Project.Models.Buildings", "Building")
                         .WithMany("Customers")
                         .HasForeignKey("FKBuilding")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -105,9 +105,9 @@ namespace JABILProject.Migrations
                     b.Navigation("Building");
                 });
 
-            modelBuilder.Entity("JABIL_Project.Models.PartNumbers", b =>
+            modelBuilder.Entity("Dot_NET_CRUD_Project.Models.PartNumbers", b =>
                 {
-                    b.HasOne("JABIL_Project.Models.Customers", "Customer")
+                    b.HasOne("Dot_NET_CRUD_Project.Models.Customers", "Customer")
                         .WithMany("PartNumbers")
                         .HasForeignKey("FKCustomer")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -116,12 +116,12 @@ namespace JABILProject.Migrations
                     b.Navigation("Customer");
                 });
 
-            modelBuilder.Entity("JABIL_Project.Models.Buildings", b =>
+            modelBuilder.Entity("Dot_NET_CRUD_Project.Models.Buildings", b =>
                 {
                     b.Navigation("Customers");
                 });
 
-            modelBuilder.Entity("JABIL_Project.Models.Customers", b =>
+            modelBuilder.Entity("Dot_NET_CRUD_Project.Models.Customers", b =>
                 {
                     b.Navigation("PartNumbers");
                 });
