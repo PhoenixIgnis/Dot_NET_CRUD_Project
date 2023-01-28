@@ -8,6 +8,10 @@ using Microsoft.EntityFrameworkCore;
 using Dot_NET_CRUD_Project.Models;
 using Azure;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using ClosedXML.Excel;
+using System.Text;
+using System.Data;
+using NuGet.Common;
 
 namespace Dot_NET_CRUD_Project.Pages.PartNumbersPage
 {
@@ -15,37 +19,55 @@ namespace Dot_NET_CRUD_Project.Pages.PartNumbersPage
     {
         private readonly Dot_NET_CRUD_Project.Models.DatabaseContext _context;
 
-
-        [BindProperty(SupportsGet = true)]
-        public string filter { get; set; }
-
         public IndexModel(Dot_NET_CRUD_Project.Models.DatabaseContext context)
         {
             _context = context;
         }
 
-        public IList<PartNumbers> PartNumbers { get;set; } = default!;
+        public IList<PartNumbers> PartNumbers { get;set; }
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(string filter)
         {
-             
-            if (_context.PartNumbers != null)
-            {
-                ViewData["filter"] = filter;
+            PartNumbers = LoadPartNumbers(filter);
+        }
 
-                switch (filter)
+        public FileResult OnPostExport(string filter)
+        {
+            DataTable dt = new DataTable("Grid");
+            dt.Columns.AddRange(new DataColumn[4] { new DataColumn("Part Number"),
+                                    new DataColumn("Availability"),
+                                    new DataColumn("Customer"),
+                                    new DataColumn("Building") });
+
+            PartNumbers = LoadPartNumbers(filter);
+
+            foreach (var partNumber in this.PartNumbers)
+            {
+                dt.Rows.Add(partNumber.PartNumber, partNumber.Available, partNumber.Customer.Customer, partNumber.Customer.Building.Building);
+            }
+
+            using (XLWorkbook wb = new XLWorkbook())
+            {
+                wb.Worksheets.Add(dt);
+                using (MemoryStream stream = new MemoryStream())
                 {
-                    case "true":
-                        PartNumbers = await _context.PartNumbers.Where(p => p.Available == true).Include(c => c.Customer).ThenInclude(b => b.Building).ToListAsync();
-                        break;
-                    case "false":
-                        PartNumbers = await _context.PartNumbers.Where(p => p.Available == false).Include(c => c.Customer).ThenInclude(b => b.Building).ToListAsync();
-                        break;
-                    default:
-                        PartNumbers = await _context.PartNumbers.Include(c => c.Customer).ThenInclude(b => b.Building).ToListAsync();
-                        break;
+                    wb.SaveAs(stream);
+                    return File(stream.ToArray(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "PartNumbersData-"+DateTime.UtcNow.ToString("dd/MM/yyyy-h:m:tt") + ".xlsx");
                 }
-                
+            }
+        }
+
+        private IList<PartNumbers> LoadPartNumbers(string filter)
+        {
+            ViewData["filter"] = filter;
+            switch (filter)
+            {
+                case "true":
+                    return _context.PartNumbers.Where(p => p.Available == true).Include(c => c.Customer.Building).ToList();
+                case "false":
+                    return _context.PartNumbers.Where(p => p.Available == false).Include(c => c.Customer.Building).ToList();
+                default:
+                    return _context.PartNumbers.Include(c => c.Customer.Building).ToList();
             }
         }
     }

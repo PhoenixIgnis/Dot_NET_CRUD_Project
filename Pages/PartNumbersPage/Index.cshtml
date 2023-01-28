@@ -12,38 +12,51 @@
 </p>
 
 
-<form method="get" asp-for="filter">
-    <label for="filter">Availability: </label>
-    <select name="filter">
-        @switch (ViewData["filter"])
-       {
-           default:
-                <option selected value="all">All</option>
-                <option value="true">Available</option>
-                <option value="false">Unavailable</option>
-           break;
-           
-           case "true":
-                <option value="all">All</option>
-                <option selected value="true">Available</option>
-                <option value="false">Unavailable</option>
-           break;
-           
-           case "false":
-                <option value="all">All</option>
-                <option value="true">Available</option>
-                <option selected value="false">Unavailable</option>
-           break;
-        }
+<div class="row">
+  <div class="col">
+        <form method="get" asp-for="filter">
+            <label for="filter">Availability: </label>
+            <select name="filter">
+                @switch (ViewData["filter"])
+                {
+                    default:
+                        <option selected value="all">All</option>
+                        <option value="true">Available</option>
+                        <option value="false">Unavailable</option>
+                        break;
 
-    </select>
-    <input type="submit"  value="filter" />
-</form>
+                    case "true":
+                        <option value="all">All</option>
+                        <option selected value="true">Available</option>
+                        <option value="false">Unavailable</option>
+                        break;
+
+                    case "false":
+                        <option value="all">All</option>
+                        <option value="true">Available</option>
+                        <option selected value="false">Unavailable</option>
+                        break;
+                }
+
+            </select>
+            <input type="submit" value="filter" />
+        </form>
+  </div>
+  <div class="col">
+        <form method="post">
+            <input hidden name="filter" value="@ViewData["filter"]"></input>
+            <input type="submit" value="Export" asp-page-handler="Export" />
+        </form>
+
+  </div>
+</div>
+
+
 
 <br>
 
-<div id="Grid">
-    <table cellpadding="5" cellspacing="0" style="border: 1px solid #ccc;">
+<div>
+    <table id="PartNumbersGrid" cellpadding="5" cellspacing="0" style="border: 1px solid #ccc;">
         <tr>
             <th style="background-color: #B8DBFD;border: 1px solid #ccc"> Part Number</th>
             <th style="background-color: #B8DBFD;border: 1px solid #ccc"> Availability</th>
@@ -68,3 +81,4 @@
         }
     </table>
  </div>
+
