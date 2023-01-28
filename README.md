@@ -97,10 +97,14 @@ This is an example of how to list things you need to use the software and how to
   Download and Install https://visualstudio.microsoft.com/vs/
   ```
 * ASP.NET Core Runtime version 7.02
+* ```sh
   Download and Install https://dotnet.microsoft.com/en-us/download/dotnet/7.0
+  ```
  
 * SQLServer 18>
+* ```sh
   Download and Install https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
+  ```
 
 ### Installation Instructions
 
