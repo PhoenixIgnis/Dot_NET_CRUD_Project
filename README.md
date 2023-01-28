@@ -50,7 +50,7 @@
 
 This is a C# CRUD (Create, Read, Update, Delete) project built using the following technologies:
 
-C# for the main programming language
+* C# for the main programming language
 * Entity Framework Core for data access and management
 * Razor Pages for building the web interface
 * SQL Server for storing the data
