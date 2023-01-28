@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Dot_NET_CRUD_Project.Models;
 
-namespace JABIL_Project.Pages.Clientes
+namespace Dot_NET_CRUD_Project.Pages.CustomersPage
 {
     public class CreateModel : PageModel
     {
