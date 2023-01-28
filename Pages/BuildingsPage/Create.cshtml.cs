@@ -17,7 +17,7 @@ namespace Dot_NET_CRUD_Project.Pages.BuildingsPage
         {
             _context = context;
         }
-
+        
         public IActionResult OnGet()
         {
             return Page();
