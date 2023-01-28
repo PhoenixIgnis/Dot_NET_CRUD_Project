@@ -34,12 +34,9 @@
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#installation-instructions">Installation Instructions</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -51,47 +48,41 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+This is a C# CRUD (Create, Read, Update, Delete) project built using the following technologies:
+
+C# for the main programming language
+* Entity Framework Core for data access and management
+* Razor Pages for building the web interface
+* SQL Server for storing the data
+* ClosedXML for exporting data to Excel
+* Bootstrap for styling and layout
+
+The project is designed as an exercise for an interview for a developer position. It is a simple web application that allow CRUD operations on a database of Buildings, Customers and PartNumbers tables. Additionally, the project has implemented functionality to export data to excel using ClosedXML library. The user interface is built using Razor Pages and Bootstrap for a responsive and user-friendly experience. The goal of this project is to showcase the developer's (Me) skills in using the above technologies.
+
+The database:
 <div align="center">
   <img src="https://github.com/PhoenixIgnis/JABIL-Project/blob/master/Design/DBDiagram.png" alt="Database Diagram">
 </div>
-
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
-
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
-Use the `BLANK_README.md` to get started.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+* ![BootStrap][Bootstrap.com]
+* ![ClosedXML][ClosedXML]
+* ![Entity Framework Core][EFCore]
+* ![Razor Pages][RazorPages]
 
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- GETTING STARTED -->
 ## Getting Started
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
 * Visual Studio 2022
   ```sh
   Download and Install https://visualstudio.microsoft.com/vs/
@@ -135,54 +126,6 @@ This is an example of how to list things you need to use the software and how to
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
-
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 <!-- LICENSE -->
 ## License
 
@@ -195,9 +138,9 @@ Distributed under the Mozilla Public License 2.0. See `LICENSE.txt` for more inf
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Isaac Rodriguez - IE.RG@Outlook.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [.NET CRUD Project](https://github.com/PhoenixIgnis/Dot_NET_CRUD_Project)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -206,9 +149,15 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
-
 * [Best-README-Template](https://github.com/othneildrew/Best-README-Template)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
+[Bootstrap-url]: https://getbootstrap.com/
+[EFCore]: https://img.shields.io/badge/Entity%20Framework%20Core-512BD4?style=for-the-badge&logo=.NET&logoColor=white
+[ClosedXML]: https://img.shields.io/badge/-ClosedXML-40bf00?style=for-the-badge&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAMAAAAPdrEwAAAB+1BMVEUAAADh8eHh8uHg8OHf8OBBpEVCpEZCpUZDpUdFqElGpkpGqUpHpktHqUpHqUtHqktIpktIpkxIqUxJpkxJpk1JqE1Kpk1Kpk5Kp05Kqk1Lp05Mr1BNr1BNr1FOp1FOsFJPqFNPq1NQqFNQqFRQsVNQsVRRqFRRqFVRrFVRsVVSqVVSqVZSslVTqVZTrVdUr1dVrllWqllXqllXsVpYqltYq1tZq1tZq1xatV5ctmBdt2Bft2NhuGVitGViuWVkumdmu2lntmpovGtpvG1qvG5ruG1rvW5tuXBtvnBuunFuvnFuvnJvu3Jvv3JywHV6u3x6w316xH18xX99xYB+vIB/wYGDxIaDyIaIyouMxI6NxI+Z0puf1KGgyKGg1KKhyKKhyaKhzKKi1aSj1qWkzaWk16an1amo2Kqp2Kup2auq2ayr0ayr162s166t0q6u26+y3LSy3bS13ra23ri317i337i417i417m437q517m52Lm52Lq54Lq737y837284b6+27+/27+/28C/4cHA48HB3cLB4sPC3cLC3cPR6tLR69LS69PU5dTU5dXV5dXV5dbV5tbV7NbW5tbW7NfX7djY59ja7tvb6dvb6dzc6dzd6t7d8N3d8N7e6t7e697j7uPj7uTk7uT8/fz8/vz8/v39/v3+//7+//////+Gpmy5AAAABXRSTlMAqqrB1/4Ehh4AAAMpSURBVHjatNaDdiBLEMbxvqjYTjqXa9u2bWdt2/ZubDvzmDvB8DupntSZ/B/gN2gqr6+n962YqLW8SSv3n6tS2J01OpbWPwzB39fq2Npc65ev/aNjbNJdTz6hY+6iI1/VcffXPTXUt3907E2rH6LX6nFoh7K7o8el1zYtnM/H/9Js25X6KpMf9H802K3qpFC2LIN9Re2VyI9s2bZLNdMRtUIq233m3nujmiiXeXu5Espme+nY6ce2jLacRhltMQ2y04WYaJQrCzJ4WixX5xGhjbRAziVCG2mBnE1DpfO0XEabp1G2QM4ip4W3/pLTj1BOc+VFHdaXv3haLltgIy2UwWZpXs4KyWAzNCtXZrvyYltGOyKd02SW0Y5CJ9P/IbsiF2SwedqRKWSX56EMNk87csguL0DZrecgR4Ps2CAvArmvjFIj0sVEIbu8iJfJsQ304+bJIdss2zbSKFtWW9AuLzHLto00ykG78adZdmygQbbtKeT0d5FZdmygQbZrnk5OnHyGyG8jjTLavOzYo9JPLTe0F3Oy0xw1itxvBexZRhn6T3Gyz/6f3ObxMk8/C8vWz0Jym9DIyxz9HOUiIrRRRtooF1Cg/xsZmaFRLvfJYPegjDTKsPOj3Q0y0IycS07zZ/ltXgaalZd0NHv2v42DchlFpZ8PgOw7uzstK2AzMtDPLZCz/LJdm8+uAxloRvbdvmw5ZCcQT/Ny8J2Hap+BjIE+1g9yijeCtuza08dK63e8zNscDXZ5Gsq8jTTaKIdqSIpMo12excjMGgQa7J/ZvCygS99FkE9RZBrsn7mM3MPILK3/emf9yJPJQIN91id3heVeTgYayhxd7uNlpNGWy0ijLZaBBlsqAw22WAYaui6XTfRfb+Uy0mjLZKCh0jf8GjTSk6LY3WYZmq1Wa6Y3cplWqQOat6UyHVLnNW9LZbqkarTBFsoJfyq1wWDvIVGblFIvtKFMEf1e2W0dD3uLGqx+Wvx2/p9qqPs6bjvxpRrp8l/x2ok3lduTmXHa+a+Ur5bd8dk7/1DBfq3Fjypms3m2MWACpvwIX2tL3MBYgwAwcAzLYUSYBwBsLOERTSjfUAAAAABJRU5ErkJggg==
+[RazorPages]: https://img.shields.io/badge/Razor%20Pages-512BD4?style=for-the-badge&logo=.NET&logoColor=white
+
 
