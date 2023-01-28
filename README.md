@@ -1,19 +1,19 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/PhoenixIgnis/JABIL-Project">
-    <img src="https://github.com/PhoenixIgnis/JABIL-Project/blob/master/Images/logo_NETcore.svg" alt="Logo" width="160" height="160">
+  <a href="https://github.com/PhoenixIgnis/Dot_NET_CRUD_Project">
+    <img src="https://github.com/PhoenixIgnis/Dot_NET_CRUD_Project/blob/master/Images/logo_NETcore.svg" alt="Logo" width="160" height="160">
   </a>
 
   <h3 align="center">.NET CRUD</h3>
 
   <p align="center">
-    ¡A .NET CRUD made as an excercise!
+    A .NET CRUD made as an excercise!
     <br />
-    <a href="https://github.com/PhoenixIgnis/JABIL-Project"><strong>Explore the docs //TODO»</strong></a>
+    <a href="https://github.com/PhoenixIgnis/Dot_NET_CRUD_Project"><strong>Explore the docs //TODO»</strong></a>
     <br />
     <br />
-    <a href="https://github.com/PhoenixIgnis/JABIL-Project">View Demo //TODO</a>
+    <a href="https://github.com/PhoenixIgnis/Dot_NET_CRUD_Project">View Demo //TODO</a>
   </p>
 </div>
 
@@ -87,35 +87,47 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 <!-- GETTING STARTED -->
 ## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* npm
+* Visual Studio 2022
   ```sh
-  npm install npm@latest -g
+  Download and Install https://visualstudio.microsoft.com/vs/
   ```
+* ASP.NET Core Runtime version 7.02
+  Download and Install https://dotnet.microsoft.com/en-us/download/dotnet/7.0
+ 
+* SQLServer 18>
+  Download and Install https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
 
-### Installation
+### Installation Instructions
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/PhoenixIgnis/Dot_NET_CRUD_Project.git
    ```
-3. Install NPM packages
+2. Install Packages via NuGet
    ```sh
-   npm install
+   install-Package ClosedXML
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+   ```sh
+   install-Package Microsoft.EntityFrameworkCore.SqlServer 
    ```
+   ```sh
+   install-Package Microsoft.EntityFrameworkCore.Tools      
+   ```
+3. Create the local SQLServer Database
+   ```sh
+   Update-Database
+   ```
+4. Initialize The Database
+   ```sh
+   Run the program and data will be seeded automatically.
+   ```
+5. Run the project in Visual Studio
+  
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
