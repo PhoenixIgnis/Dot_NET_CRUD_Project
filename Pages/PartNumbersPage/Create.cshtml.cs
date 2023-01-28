@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Dot_NET_CRUD_Project.Models;
 
-namespace Dot_NET_CRUD_Project.Pages.Piezas
+namespace Dot_NET_CRUD_Project.Pages.PartNumbersPage
 {
     public class CreateModel : PageModel
     {

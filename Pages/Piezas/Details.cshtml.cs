@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Dot_NET_CRUD_Project.Models;
 
-namespace JABIL_Project.Pages.Piezas
+namespace Dot_NET_CRUD_Project.Pages.Piezas
 {
     public class DetailsModel : PageModel
     {

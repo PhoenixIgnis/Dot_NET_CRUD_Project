@@ -7,19 +7,18 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Dot_NET_CRUD_Project.Models;
 
-namespace Dot_NET_CRUD_Project.Pages.Piezas
+namespace Dot_NET_CRUD_Project.Pages.PartNumbersPage
 {
-    public class DeleteModel : PageModel
+    public class DetailsModel : PageModel
     {
         private readonly Dot_NET_CRUD_Project.Models.DatabaseContext _context;
 
-        public DeleteModel(Dot_NET_CRUD_Project.Models.DatabaseContext context)
+        public DetailsModel(Dot_NET_CRUD_Project.Models.DatabaseContext context)
         {
             _context = context;
         }
 
-        [BindProperty]
-      public PartNumbers PartNumbers { get; set; } = default!;
+      public PartNumbers PartNumbers { get; set; } = default!; 
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,7 +28,6 @@ namespace Dot_NET_CRUD_Project.Pages.Piezas
             }
 
             var partnumbers = await _context.PartNumbers.FirstOrDefaultAsync(m => m.PKPartNumber == id);
-
             if (partnumbers == null)
             {
                 return NotFound();
@@ -39,24 +37,6 @@ namespace Dot_NET_CRUD_Project.Pages.Piezas
                 PartNumbers = partnumbers;
             }
             return Page();
-        }
-
-        public async Task<IActionResult> OnPostAsync(int? id)
-        {
-            if (id == null || _context.PartNumbers == null)
-            {
-                return NotFound();
-            }
-            var partnumbers = await _context.PartNumbers.FindAsync(id);
-
-            if (partnumbers != null)
-            {
-                PartNumbers = partnumbers;
-                _context.PartNumbers.Remove(PartNumbers);
-                await _context.SaveChangesAsync();
-            }
-
-            return RedirectToPage("./Index");
         }
     }
 }

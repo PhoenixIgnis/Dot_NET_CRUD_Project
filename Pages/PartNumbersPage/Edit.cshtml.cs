@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Dot_NET_CRUD_Project.Models;
 
-namespace Dot_NET_CRUD_Project.Pages.Piezas
+namespace Dot_NET_CRUD_Project.Pages.PartNumbersPage
 {
     public class EditModel : PageModel
     {
