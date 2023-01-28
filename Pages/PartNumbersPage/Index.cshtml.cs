@@ -20,12 +20,23 @@ namespace Dot_NET_CRUD_Project.Pages.PartNumbersPage
 
         public IList<PartNumbers> PartNumbers { get;set; } = default!;
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(string filter)
         {
             if (_context.PartNumbers != null)
             {
-                PartNumbers = await _context.PartNumbers
-                .Include(p => p.Customer).ToListAsync();
+                switch (filter)
+                {
+                    case "true":
+                        PartNumbers = await _context.PartNumbers.Where(x => x.Available == true).Include(p => p.Customer).ToListAsync();
+                        break;
+                    case "false":
+                        PartNumbers = await _context.PartNumbers.Where(x => x.Available == false).Include(p => p.Customer).ToListAsync();
+                        break;
+                    default:
+                        PartNumbers = await _context.PartNumbers.Include(p => p.Customer).ToListAsync();
+                        break;
+                }
+                
             }
         }
     }

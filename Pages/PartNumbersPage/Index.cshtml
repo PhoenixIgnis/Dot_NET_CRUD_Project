@@ -10,6 +10,17 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+
+<form method="get">
+    <label for="filter">Available:</label>
+    <select id="filter" name="filter">
+        <option value="all">All</option>
+        <option value="true">Available</option>
+        <option value="false">Unavailable</option>
+    </select>
+    <input type="submit" value="filter" />
+</form>
+
 <table class="table">
     <thead>
         <tr>
