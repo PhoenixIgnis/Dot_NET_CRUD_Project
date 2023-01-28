@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Dot_NET_CRUD_Project.Models;
 
-namespace JABIL_Project.Pages.Edificios
+namespace Dot_NET_CRUD_Project.Pages.BuildingsPage
 {
     public class EditModel : PageModel
     {
