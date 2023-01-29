@@ -8,11 +8,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace JABILProject.Migrations
+namespace DotNETCRUDProject.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20230128163116_DBInitialize")]
-    partial class DBInitialize
+    [Migration("20230129024719_fixedInitial")]
+    partial class fixedInitial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

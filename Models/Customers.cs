@@ -9,7 +9,6 @@ namespace Dot_NET_CRUD_Project.Models
         public int PKCustomers { get; set; }
 
         [Required]
-        [MaxLength]
         public string Customer { get; set; } = string.Empty;
 
         [Required]

@@ -2,10 +2,10 @@
 
 #nullable disable
 
-namespace JABILProject.Migrations
+namespace DotNETCRUDProject.Migrations
 {
     /// <inheritdoc />
-    public partial class DBInitialize : Migration
+    public partial class fixedInitial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
