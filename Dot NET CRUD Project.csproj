@@ -4,7 +4,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>JABIL_Project</RootNamespace>
+    <RootNamespace>Dot_NET_CRUD_Project</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
