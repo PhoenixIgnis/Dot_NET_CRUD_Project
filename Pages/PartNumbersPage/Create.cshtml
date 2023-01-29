@@ -28,14 +28,14 @@
                 <select asp-for="PartNumbers.FKCustomer" class ="form-control" asp-items="ViewBag.FKCustomer"></select>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="Index">Back to List</a>
+    <a class="btn" asp-page="Index">Back to List</a>
 </div>
 
 @section Scripts {

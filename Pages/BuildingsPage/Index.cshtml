@@ -5,11 +5,11 @@
     ViewData["Title"] = "Buildings";
 }
 
-<h1>Index</h1>
+<div class="row g-3">
+    <a class="btn" asp-page="Create">Create New </a>
+</div>
+<br>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -26,9 +26,9 @@
                 @Html.DisplayFor(modelItem => item.Building)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.PKBuilding">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.PKBuilding">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.PKBuilding">Delete</a>
+                <a class="btn" asp-page="./Edit" asp-route-id="@item.PKBuilding">Edit</a> 
+                <a class="btn" asp-page="./Details" asp-route-id="@item.PKBuilding">Details</a> 
+                <a class="btn"asp-page="./Delete" asp-route-id="@item.PKBuilding">Delete</a>
             </td>
         </tr>
 }
