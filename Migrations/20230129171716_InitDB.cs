@@ -5,7 +5,7 @@
 namespace DotNETCRUDProject.Migrations
 {
     /// <inheritdoc />
-    public partial class fixedInitial : Migration
+    public partial class InitDB : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

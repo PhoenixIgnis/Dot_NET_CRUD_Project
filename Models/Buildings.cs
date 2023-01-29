@@ -9,7 +9,6 @@ namespace Dot_NET_CRUD_Project.Models
         public int PKBuilding { get; set; }
 
         [Required]
-        [MaxLength]
         public string Building { get; set; } = string.Empty;
 
         public List<Customers>? Customers { get; set; }
