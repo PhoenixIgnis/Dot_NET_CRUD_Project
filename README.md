@@ -11,7 +11,12 @@
   <p align="center">
     A .NET CRUD made as an excercise!
     <br />
-    <a href="https://github.com/PhoenixIgnis/Dot_NET_CRUD_Project">View Demo //TODO</a>
+    <br />
+    <br />
+    Demo:
+    <br />
+    <br />
+    <img src="https://github.com/PhoenixIgnis/Dot_NET_CRUD_Project/blob/master/Images/Demo.gif" alt="Demo">
   </p>
 </div>
 
@@ -41,7 +46,7 @@
   </ol>
 </details>
 
-
+<br />
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
@@ -61,10 +66,11 @@ The database:
 <div align="center">
   <img src="https://github.com/PhoenixIgnis/JABIL-Project/blob/master/Design/DBDiagram.png" alt="Database Diagram">
 </div>
-
+<br />
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Built With
+<!-- BUILT WITH -->
+## Built With
 
 * ![BootStrap][Bootstrap.com]
 * ![ClosedXML][ClosedXML]
