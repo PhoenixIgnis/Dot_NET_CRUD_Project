@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using ClosedXML.Excel;
+using Dot_NET_CRUD_Project.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using Dot_NET_CRUD_Project.Models;
-using Azure;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using ClosedXML.Excel;
-using System.Text;
 using System.Data;
-using NuGet.Common;
 
 namespace Dot_NET_CRUD_Project.Pages.PartNumbersPage
 {
@@ -24,7 +16,7 @@ namespace Dot_NET_CRUD_Project.Pages.PartNumbersPage
             _context = context;
         }
 
-        public IList<PartNumbers> PartNumbers { get;set; }
+        public IList<PartNumbers> PartNumbers { get; set; }
 
         public async Task OnGetAsync(string filter)
         {
@@ -52,7 +44,7 @@ namespace Dot_NET_CRUD_Project.Pages.PartNumbersPage
                 using (MemoryStream stream = new MemoryStream())
                 {
                     wb.SaveAs(stream);
-                    return File(stream.ToArray(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "PartNumbersData-"+DateTime.UtcNow.ToString("dd/MM/yyyy-h:m:tt") + ".xlsx");
+                    return File(stream.ToArray(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "PartNumbersData-" + DateTime.UtcNow.ToString("dd/MM/yyyy-h:m:tt") + ".xlsx");
                 }
             }
         }
