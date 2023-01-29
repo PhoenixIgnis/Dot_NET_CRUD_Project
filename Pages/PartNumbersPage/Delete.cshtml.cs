@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Dot_NET_CRUD_Project.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using Dot_NET_CRUD_Project.Models;
 
 namespace Dot_NET_CRUD_Project.Pages.PartNumbersPage
 {
@@ -19,7 +15,7 @@ namespace Dot_NET_CRUD_Project.Pages.PartNumbersPage
         }
 
         [BindProperty]
-      public PartNumbers PartNumbers { get; set; } = default!;
+        public PartNumbers PartNumbers { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -28,13 +24,13 @@ namespace Dot_NET_CRUD_Project.Pages.PartNumbersPage
                 return NotFound();
             }
 
-            var partnumbers = await _context.PartNumbers.FirstOrDefaultAsync(m => m.PKPartNumber == id);
+            var partnumbers = await _context.PartNumbers.Include(c => c.Customer.Building).FirstOrDefaultAsync(m => m.PKPartNumber == id);
 
             if (partnumbers == null)
             {
                 return NotFound();
             }
-            else 
+            else
             {
                 PartNumbers = partnumbers;
             }

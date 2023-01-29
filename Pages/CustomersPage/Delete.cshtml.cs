@@ -28,7 +28,7 @@ namespace Dot_NET_CRUD_Project.Pages.CustomersPage
                 return NotFound();
             }
 
-            var customers = await _context.Customers.FirstOrDefaultAsync(m => m.PKCustomers == id);
+            var customers = await _context.Customers.Include(b => b.Building).FirstOrDefaultAsync(m => m.PKCustomers == id);
 
             if (customers == null)
             {

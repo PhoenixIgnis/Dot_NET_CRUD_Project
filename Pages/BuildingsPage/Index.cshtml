@@ -10,27 +10,28 @@
 </div>
 <br>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Buildings[0].Building)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Buildings) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Building)
-            </td>
-            <td>
-                <a class="btn" asp-page="./Edit" asp-route-id="@item.PKBuilding">Edit</a> 
-                <a class="btn" asp-page="./Details" asp-route-id="@item.PKBuilding">Details</a> 
-                <a class="btn"asp-page="./Delete" asp-route-id="@item.PKBuilding">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="row table-wrapper-scroll-y custom-scrollbar table-wrapper-scroll-x">
+    <table class="table table-responsive shadow">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Buildings[0].Building)
+                </th>
+                <th style="display: flex; justify-content: center;">Options</th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model.Buildings) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Building)
+                </td>
+                    <td td style="display: flex; justify-content: center;">
+                    <a class="btn" asp-page="./Edit" asp-route-id="@item.PKBuilding">Edit</a> 
+                    <a class="btn"asp-page="./Delete" asp-route-id="@item.PKBuilding">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+</div>

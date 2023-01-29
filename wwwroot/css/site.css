@@ -84,3 +84,11 @@ footer {
     display: block;
 }
 
+.table-wrapper-scroll-x {
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
