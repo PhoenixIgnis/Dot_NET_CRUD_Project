@@ -1,4 +1,5 @@
 <!-- PROJECT LOGO -->
+<a name="readme-top"></a>
 <br />
 <div align="center">
   <a href="https://github.com/PhoenixIgnis/Dot_NET_CRUD_Project">
@@ -9,9 +10,6 @@
 
   <p align="center">
     A .NET CRUD made as an excercise!
-    <br />
-    <a href="https://github.com/PhoenixIgnis/Dot_NET_CRUD_Project"><strong>Explore the docs //TODO»</strong></a>
-    <br />
     <br />
     <a href="https://github.com/PhoenixIgnis/Dot_NET_CRUD_Project">View Demo //TODO</a>
   </p>
@@ -140,7 +138,7 @@ Distributed under the Mozilla Public License 2.0. See `LICENSE.txt` for more inf
 
 Isaac Rodriguez - IE.RG@Outlook.com
 
-Project Link: [.NET CRUD Project](https://github.com/PhoenixIgnis/Dot_NET_CRUD_Project)
+Project Link: - [.NET CRUD Project](https://github.com/PhoenixIgnis/Dot_NET_CRUD_Project)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
