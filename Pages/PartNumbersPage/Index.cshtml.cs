@@ -28,10 +28,10 @@ namespace Dot_NET_CRUD_Project.Pages.PartNumbersPage
 
         public async Task OnGetAsync(string filter)
         {
-            PartNumbers = LoadPartNumbers(filter);
+            PartNumbers = await LoadPartNumbers(filter);
         }
 
-        public FileResult OnPostExport(string filter)
+        public async Task<FileResult> OnPostExport(string filter)
         {
             DataTable dt = new DataTable("Grid");
             dt.Columns.AddRange(new DataColumn[4] { new DataColumn("Part Number"),
@@ -39,7 +39,7 @@ namespace Dot_NET_CRUD_Project.Pages.PartNumbersPage
                                     new DataColumn("Customer"),
                                     new DataColumn("Building") });
 
-            PartNumbers = LoadPartNumbers(filter);
+            PartNumbers = await LoadPartNumbers(filter);
 
             foreach (var partNumber in this.PartNumbers)
             {
@@ -57,17 +57,17 @@ namespace Dot_NET_CRUD_Project.Pages.PartNumbersPage
             }
         }
 
-        private IList<PartNumbers> LoadPartNumbers(string filter)
+        private async Task<IList<PartNumbers>> LoadPartNumbers(string filter)
         {
             ViewData["filter"] = filter;
             switch (filter)
             {
                 case "true":
-                    return _context.PartNumbers.Where(p => p.Available == true).Include(c => c.Customer.Building).ToList();
+                    return await _context.PartNumbers.Where(p => p.Available == true).Include(c => c.Customer.Building).ToListAsync();
                 case "false":
-                    return _context.PartNumbers.Where(p => p.Available == false).Include(c => c.Customer.Building).ToList();
+                    return await _context.PartNumbers.Where(p => p.Available == false).Include(c => c.Customer.Building).ToListAsync();
                 default:
-                    return _context.PartNumbers.Include(c => c.Customer.Building).ToList();
+                    return await _context.PartNumbers.Include(c => c.Customer.Building).ToListAsync();
             }
         }
     }
