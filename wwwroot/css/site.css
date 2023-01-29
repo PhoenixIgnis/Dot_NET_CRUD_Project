@@ -1,5 +1,7 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
 }
 
 @media (min-width: 768px) {
@@ -9,16 +11,9 @@ html {
     }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
 body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
     margin-bottom: 60px;
     min-height: 100vh;
     display: flex;
@@ -28,3 +23,54 @@ body {
 footer {
     margin-top: auto;
 }
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+/* Change the primary color */
+.btn-primary, .badge-primary {
+    background-color: #0079c1; /* blue */
+    border-color: #005a9c; /* dark blue */
+}
+
+/* Change the secondary color */
+.btn-secondary, .badge-secondary {
+    background-color: #9b4e4e; /* maroon */
+    border-color: #8b3e3e; /* dark maroon */
+}
+
+/* Change the background color of the navigation bar */
+.navbar {
+    background-color: #333333; /* dark gray */
+}
+
+    /* Change the font color of the navigation links */
+.navbar a {
+    color: #ffffff; /* white */
+}
+
+/* Add a box shadow to the buttons */
+.btn {
+    box-shadow: 2px 2px 5px #cccccc;
+
+}
+
+/* Add a hover effect to the buttons */
+    .btn:hover {
+        background-color: #005a9c; /* dark blue */
+        color: #ffffff; /* white */
+    }
+
+/* Add a background color to the active navigation item */
+.nav-link.active {
+    background-color: #7BB9DE; /* blue */
+    color: #ffffff; /* white */
+}
+
+/* Add a hover effect to the navigation item */
+.nav-link:hover {
+    background-color: #9CD8FC; /* blue */
+    color: #ffffff; /* white */
+}
+
