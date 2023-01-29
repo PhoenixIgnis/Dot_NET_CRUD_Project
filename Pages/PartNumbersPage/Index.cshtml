@@ -5,80 +5,84 @@
     ViewData["Title"] = "Part Numbers";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-
-
-<div class="row">
-  <div class="col">
-        <form method="get" asp-for="filter">
-            <label for="filter">Availability: </label>
-            <select name="filter">
-                @switch (ViewData["filter"])
-                {
-                    default:
-                        <option selected value="all">All</option>
-                        <option value="true">Available</option>
-                        <option value="false">Unavailable</option>
-                        break;
-
-                    case "true":
-                        <option value="all">All</option>
-                        <option selected value="true">Available</option>
-                        <option value="false">Unavailable</option>
-                        break;
-
-                    case "false":
-                        <option value="all">All</option>
-                        <option value="true">Available</option>
-                        <option selected value="false">Unavailable</option>
-                        break;
-                }
-
-            </select>
-            <input type="submit" value="filter" />
-        </form>
-  </div>
-  <div class="col">
-        <form method="post">
-            <input hidden name="filter" value="@ViewData["filter"]"></input>
-            <input type="submit" value="Export" asp-page-handler="Export" />
-        </form>
-
-  </div>
+<div class="row g-3">
+    <a class="btn" asp-page="Create">Create New </a>
 </div>
+<br>
+<div class="row g-3">
+    <div class="col-auto" style="display: flex; align-items: center;">
+        <label> Availability: </label> 
+    </div>
+    <div class="col-7">
+        
+        <form class = "row" method="get" asp-for="filter">
+            <div class="col">
+                <select class="form-select" name="filter">
+                    @switch (ViewData["filter"])
+                    {
+                        default:
+                            <option selected value="all">All</option>
+                            <option value="true">Available</option>
+                            <option value="false">Unavailable</option>
+                            break;
 
+                        case "true":
+                            <option value="all">All</option>
+                            <option selected value="true">Available</option>
+                            <option value="false">Unavailable</option>
+                            break;
 
+                        case "false":
+                            <option value="all">All</option>
+                            <option value="true">Available</option>
+                            <option selected value="false">Unavailable</option>
+                            break;
+                    }
+                </select>
+            </div>
+           
+            <div class="col-auto">
+                <input class="btn" type="submit" value="filter" />
+            </div>
 
+        </form>
+    </div>
+    
+    <div class="col-4">
+        <form method="post" style="display: flex; justify-content: flex-end;">
+            <input hidden name="filter" value="@ViewData["filter"]"></input>
+            <input class="btn" type="submit" value="Export to Excel" asp-page-handler="Export" />
+        </form>
+    </div>
+</div>
+            
 <br>
 
-<div>
-    <table id="PartNumbersGrid" cellpadding="5" cellspacing="0" style="border: 1px solid #ccc;">
-        <tr>
-            <th style="background-color: #B8DBFD;border: 1px solid #ccc"> Part Number</th>
-            <th style="background-color: #B8DBFD;border: 1px solid #ccc"> Availability</th>
-            <th style="background-color: #B8DBFD;border: 1px solid #ccc"> Customer</th>
-            <th style="background-color: #B8DBFD;border: 1px solid #ccc"> Building</th>
-            <th style="background-color: #B8DBFD;border: 1px solid #ccc"> Options</th>
-        </tr>
-        @foreach (var item in Model.PartNumbers)
-        {
+
+<div class="row ">
+    <table id="PartNumbersGrid" class="table table-responsive shadow">
             <tr>
-                <td style="border: 1px solid #ccc">@Html.DisplayFor(modelItem => item.PartNumber)</td>
-                <td style="border: 1px solid #ccc">@Html.DisplayFor(modelItem => item.Available)</td>
-                <td style="border: 1px solid #ccc">@Html.DisplayFor(modelItem => item.Customer.Customer)</td>
-                <td style="border: 1px solid #ccc">@Html.DisplayFor(modelItem => item.Customer.Building.Building)</td>
-                
-                <td>
-                    <a asp-page="./Edit" asp-route-id="@item.PKPartNumber">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.PKPartNumber">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.PKPartNumber">Delete</a>
+                <th style=""> Part Number</th>
+                <th style=""> Availability</th>
+                <th style=""> Customer</th>
+                <th style=""> Building</th>
+                <th style="display: flex; justify-content: center;"> Options</th>
+            </tr>
+            @foreach (var item in Model.PartNumbers)
+            {
+            <tr >
+                <td style="">@Html.DisplayFor(modelItem => item.PartNumber)</td>
+                <td style="">@Html.DisplayFor(modelItem => item.Available)</td>
+                <td style="">@Html.DisplayFor(modelItem => item.Customer.Customer)</td>
+                <td style="">@Html.DisplayFor(modelItem => item.Customer.Building.Building)</td>
+
+                <td style="display: flex; justify-content: center;">
+                    <a class="btn" asp-page="./Edit" asp-route-id="@item.PKPartNumber">Edit</a>
+                    <a class="btn" asp-page="./Details" asp-route-id="@item.PKPartNumber">Details</a>
+                    <a class="btn" asp-page="./Delete" asp-route-id="@item.PKPartNumber">Delete</a>
                 </td>
             </tr>
         }
     </table>
- </div>
+</div>
 
