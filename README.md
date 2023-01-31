@@ -72,10 +72,10 @@ The database:
 <!-- BUILT WITH -->
 ## Built With
 
-* ![BootStrap][Bootstrap.com]
-* ![ClosedXML][ClosedXML]
-* ![Entity Framework Core][EFCore]
-* ![Razor Pages][RazorPages]
+* [![BootStrap][Bootstrap.com]](https://getbootstrap.com/)
+* [![ClosedXML][ClosedXML]](https://github.com/ClosedXML/ClosedXML)
+* [![Entity Framework Core][EFCore]](https://github.com/dotnet/efcore)
+* [![Razor Pages][RazorPages]](https://github.com/dotnet/razor)
 
 
 
